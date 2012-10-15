@@ -8,7 +8,12 @@
 	<title><?php echo $page->get("headline|title"); ?></title>
 	<meta name="description" content="<?php echo $page->summary; ?>">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/master.css">
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/oldie.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/master.css">
+<!--<![endif]-->
 	<script src="<?php echo $config->urls->templates?>scribts/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
