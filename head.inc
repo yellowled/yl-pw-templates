@@ -18,3 +18,4 @@
 </head>
 <body>
 <!--[if lt IE 7]> <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p> <![endif]-->
+<p id="jshint" class="chromeframe">For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="http://www.enable-javascript.com/">instructions how to enable JavaScript in your web browser</a>.</p>
