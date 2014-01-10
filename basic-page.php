@@ -1,5 +1,5 @@
 <?php
-// Page template
+// Basic page template
 include("./head.inc");
 
 echo $page->body;
