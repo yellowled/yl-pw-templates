@@ -17,5 +17,5 @@
 	<script src="<?php echo $config->urls->templates?>scripts/modernizr/modernizr.js"></script>
 </head>
 <body>
-<!--[if lt IE 7]> <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p> <![endif]-->
-<p id="jshint" class="chromeframe">For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="http://www.enable-javascript.com/">instructions how to enable JavaScript in your web browser</a>.</p>
+<!--[if lt IE 8]> <p id="old-ie" class="chromeframe">Ihr Browser ist veraltet! <a href="http://browsehappy.com/">Verwenden Sie einen anderen Browser</a> oder <a href="http://www.google.com/chromeframe/?redirect=true">installieren Sie Google Chrome Frame</a>, damit diese Website korrekt angezeigt wird.</p> <![endif]-->
+<p id="enable-js" class="chromeframe">Damit diese Website korrekt und mit vollem Funktionsumfang angezeigt wird, benötigen Sie JavaScript. <a href="http://www.enable-javascript.com/de/">Wie Sie JavaScript in Ihrem Browser einschalten</a>.</p>
