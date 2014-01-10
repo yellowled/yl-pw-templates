@@ -9,7 +9,6 @@
 	<meta name="description" content="<?php echo $page->summary; ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--[if lte IE 8]>
-    <script src="<?php echo $config->urls->templates?>scripts/helpers/main-shiv.js"></script>
     <link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/oldie.css">
 <![endif]-->
 <!--[if gt IE 8]><!-->
