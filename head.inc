@@ -8,6 +8,7 @@
 	<title><?php echo $page->get("headline|title"); ?></title>
 	<meta name="description" content="<?php echo $page->summary; ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="dns-prefetch" href="//ajax.googleapis.com">
 <!--[if lte IE 8]>
     <link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/oldie.css">
 <![endif]-->
