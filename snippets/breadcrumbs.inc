@@ -1,8 +1,9 @@
-<ul>
+<div class="breadcrumb">
 <?php
 // cycle through current $page's parents
 foreach($page->parents as $parent) {
-    echo "<li><a href='{$parent->url}'>{$parent->title}</a> » </li>";
+    echo "<a href='{$parent->url}'>{$parent->title}</a><span> » </span>";
 }
+echo "{$page->title}";
 ?>
-</ul>
+</div>
