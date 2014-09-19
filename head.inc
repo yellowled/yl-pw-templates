@@ -1,4 +1,3 @@
-<?php // Global site header include file ?>
 <!doctype html>
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="de"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="de"> <![endif]-->

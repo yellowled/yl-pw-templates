@@ -1,6 +1,7 @@
 <?php
 // Search template
 $out = '';
+
 if($q = $sanitizer->selectorValue($input->get->q)) {
     // Send sanitized 'q' to whitelist; will be picked up and echoed in search box by head.inc.
     $input->whitelist('q', $q);
