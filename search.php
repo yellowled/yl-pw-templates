@@ -1,7 +1,7 @@
 <?php
 // Search page template
 
-// look for a GET variable named 'q' and sanitize it
+// Look for a GET variable named 'q' and sanitize it
 $q = $sanitizer->text($input->get->q);
 
 if($q) {
@@ -22,7 +22,7 @@ if($q) {
     $matches = $pages->find($selector);
 
     if($matches->count) {
-        $content = "<h3>$matches->count Treffer für Ihre Suchanfrage:</h3>";
+        $content = "<h3>$matches->count Treffer für Ihre Suchanfrage</h3>";
 
         $content .= renderNav($matches, 0, 'summary');
     } else {
@@ -33,3 +33,13 @@ if($q) {
     // No search terms provided
     $content = "<p>Geben Sie bitte einen oder mehrere Suchbegriffe in das Suchformular ein.</p>";
 }
+
+$action = $pages->get('template=search')->url;
+
+$content .= "<form id='search_form' action='$action' method='get'>\n";
+$content .= "<div>\n";
+$content .= "<label for='search_query'>Suche</label>\n";
+$content .= "<input id='search_query' name='q' type='search' value='$q' placeholder='Suchbegriffe(e)'>\n";
+$content .= "<input id='search_submit' type='submit' value='Suche'>\n";
+$content .= "</div>\n";
+$content .= "</form>\n";
