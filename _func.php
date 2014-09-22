@@ -127,3 +127,23 @@ function renderSearchForm() {
 
     return $out;
 }
+
+
+/**
+ * Render user login/logout link
+ *
+ * @return string
+ *
+ */
+
+function renderUserLogin() {
+    $out = '';
+
+    if($user->isLoggedin()) {
+        $out .= "<a href='{$config->urls->admin}login/logout/'>Logout ($user->name)</a>";
+    } else {
+        $out .= "<a href='{$config->urls->admin}'>Admin Login</a>";
+    }
+
+    return $out;
+}
