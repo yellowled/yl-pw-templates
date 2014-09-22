@@ -69,3 +69,20 @@ function renderBreadcrumbs() {
 
     return $out;
 }
+
+
+/**
+ * Given a group of pages, render a <ul> navigation
+ *
+ * @param string $canonical The full canonical URL of the site
+ * @return string
+ *
+ */
+
+function renderCanonicalURL($canonical) {
+    $out = '';
+
+    if ($canonical != '') $out .= "<link rel='canonical' href='$canonical{$page->url}'>";
+
+    return $out;
+}
