@@ -1,1 +1,0 @@
-<a href='<?php echo $config->urls->root; ?>'>LINKTEXT</a>
