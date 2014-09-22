@@ -28,7 +28,7 @@ function renderBreadcrumbs($current) {
 
 
 /**
- * Render page edit link.
+ * Render page edit link
  *
  * @param page $current The current $page
  * @return string
@@ -39,6 +39,29 @@ function renderEditLink($current) {
     $out = '';
 
     if($current->editable()) $out .= "<a href='$current->editURL' class='edit'>Edit</a>";
+
+    return $out;
+}
+
+
+/**
+ * Render markup for a GoogleMap with gmaps.js and the GoogleMaps marker module
+ *
+ * @param string $latitude  Latitude value
+ * @param string $longitude Longitude value
+ * @param string $zoom      Zoom value
+ * @param string $address   Street address value
+ * @param string $id        HTML id for the map container
+ * @return string
+ *
+ */
+
+function renderGoogleMap($latitude, $longitude, $zoom, $address, $id = 'map') {
+    $out = '';
+
+    $out .= "<div id='$id' class='map' data-lat='$latitude' data-lng='$longitude' data-zoom='$zoom'>\n";
+    $out .= "<span><a href='https://maps.google.de/maps?q=$address'>$address</a></span>\n";
+    $out .= "</div>\n";
 
     return $out;
 }
