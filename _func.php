@@ -7,18 +7,19 @@
 /**
  * Render a breadcrumb navigation for the current page
  *
+ * @param page $current The current $page
  * @return string
  *
  */
 
-function renderBreadcrumbs() {
+function renderBreadcrumbs($current) {
     $out = '';
 
-    foreach($page->parents as $parent) {
+    foreach($current->parents as $parent) {
         $out .= "<a href='{$parent->url}'>{$parent->title}</a><span> » </span>";
     }
 
-    $out .= "{$page->title}";
+    $out .= "$current->title";
 
     $out = "<div class='breadcrumb'>$out</div>";
 
@@ -27,33 +28,17 @@ function renderBreadcrumbs() {
 
 
 /**
- * Render canonical URL link.
- *
- * @param string $canonical The full canonical URL of the site
- * @return string
- *
- */
-
-function renderCanonicalURL($canonical) {
-    $out = '';
-
-    if ($canonical != '') $out .= "<link rel='canonical' href='$canonical{$page->url}'>";
-
-    return $out;
-}
-
-
-/**
  * Render page edit link.
  *
+ * @param page $current The current $page
  * @return string
  *
  */
 
-function renderEditLink() {
+function renderEditLink($current) {
     $out = '';
 
-    if($page->editable()) $out .= "<a href='$page->editURL' class='edit'>Edit</a>";
+    if($current->editable()) $out .= "<a href='$current->editURL' class='edit'>Edit</a>";
 
     return $out;
 }
@@ -101,49 +86,4 @@ function renderNav($items, $maxDepth = 0, $fieldNames = '', $class = 'nav') {
 	if($out) $out = "<ul class='$class'>$out</ul>";
 
 	return $out;
-}
-
-
-/**
- * Render search form
- *
- * @return string
- *
- */
-
-function renderSearchForm() {
-    $searchpage = $pages->get('template=search')->url;
-    $value = $sanitizer->entities($input->whitelist('q'));
-
-    $out = '';
-
-    $out .= "<form id='search_form' action='$searchpage' method='get'>";
-    $out .= "<div>";
-    $out .= "<label for='search_query'>Suche</label>";
-    $out .= "<input id='search_query' name='q' type='search' value='$value' placeholder='Suchbegriffe(e)'>";
-    $out .= "<input id='search_submit' type='submit' value='Suche'>";
-    $out .= "</div>";
-    $out .= "</form>";
-
-    return $out;
-}
-
-
-/**
- * Render user login/logout link
- *
- * @return string
- *
- */
-
-function renderUserLogin() {
-    $out = '';
-
-    if($user->isLoggedin()) {
-        $out .= "<a href='{$config->urls->admin}login/logout/'>Logout ($user->name)</a>";
-    } else {
-        $out .= "<a href='{$config->urls->admin}'>Admin Login</a>";
-    }
-
-    return $out;
 }

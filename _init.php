@@ -7,11 +7,14 @@
  * $config->prependTemplateFile = '_init.php'; in /site/config.php.
  */
 
+// Settings
+$canonicalURL = '';
+
 // Helper variables
 $homepage = $pages->get('/');
 
 // Meta data
-$title = $page->get('headline|title');
+$title = $page->title;
 // if page's summary field is empty, use the summary of the home page
 if($page->summary != '') {
     $description = $page->summary;
@@ -20,6 +23,7 @@ if($page->summary != '') {
 }
 
 // Content regions
+$headline = $page->get('headline|title');
 $content = $page->body;
 
 // Include shared functions
