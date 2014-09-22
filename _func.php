@@ -27,7 +27,7 @@ function renderBreadcrumbs() {
 
 
 /**
- * Given a group of pages, render a <ul> navigation
+ * Render canonical URL link.
  *
  * @param string $canonical The full canonical URL of the site
  * @return string
