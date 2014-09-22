@@ -12,7 +12,12 @@ $homepage = $pages->get('/');
 
 // Meta data
 $title = $page->get('headline|title');
-$description = $page->summary;
+// if page's summary field is empty, use the summary of the home page
+if($page->summary != '') {
+    $description = $page->summary;
+} else {
+    $description = $pages->get(1)->summary;
+}
 
 // Content regions
 $content = $page->body;
