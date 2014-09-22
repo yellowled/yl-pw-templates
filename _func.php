@@ -5,6 +5,45 @@
  */
 
 /**
+ * Render a breadcrumb navigation for the current page
+ *
+ * @return string
+ *
+ */
+
+function renderBreadcrumbs() {
+    $out = '';
+
+    foreach($page->parents as $parent) {
+        $out .= "<a href='{$parent->url}'>{$parent->title}</a><span> » </span>";
+    }
+
+    $out .= "{$page->title}";
+
+    $out = "<div class='breadcrumb'>$out</div>";
+
+    return $out;
+}
+
+
+/**
+ * Given a group of pages, render a <ul> navigation
+ *
+ * @param string $canonical The full canonical URL of the site
+ * @return string
+ *
+ */
+
+function renderCanonicalURL($canonical) {
+    $out = '';
+
+    if ($canonical != '') $out .= "<link rel='canonical' href='$canonical{$page->url}'>";
+
+    return $out;
+}
+
+
+/**
  * Given a group of pages, render a <ul> navigation
  *
  * @param array|PageArray $items
@@ -46,43 +85,4 @@ function renderNav($items, $maxDepth = 0, $fieldNames = '', $class = 'nav') {
 	if($out) $out = "<ul class='$class'>$out</ul>";
 
 	return $out;
-}
-
-
-/**
- * Render a breadcrumb navigation for the current page
- *
- * @return string
- *
- */
-
-function renderBreadcrumbs() {
-    $out = '';
-
-    foreach($page->parents as $parent) {
-        $out .= "<a href='{$parent->url}'>{$parent->title}</a><span> » </span>";
-    }
-
-    $out .= "{$page->title}";
-
-    $out = "<div class='breadcrumb'>$out</div>";
-
-    return $out;
-}
-
-
-/**
- * Given a group of pages, render a <ul> navigation
- *
- * @param string $canonical The full canonical URL of the site
- * @return string
- *
- */
-
-function renderCanonicalURL($canonical) {
-    $out = '';
-
-    if ($canonical != '') $out .= "<link rel='canonical' href='$canonical{$page->url}'>";
-
-    return $out;
 }
