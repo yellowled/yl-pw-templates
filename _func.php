@@ -102,3 +102,28 @@ function renderNav($items, $maxDepth = 0, $fieldNames = '', $class = 'nav') {
 
 	return $out;
 }
+
+
+/**
+ * Render search form
+ *
+ * @return string
+ *
+ */
+
+function renderSearchForm() {
+    $searchpage = $pages->get('template=search')->url;
+    $value = $sanitizer->entities($input->whitelist('q'));
+
+    $out = '';
+
+    $out .= "<form id='search_form' action='$searchpage' method='get'>";
+    $out .= "<div>";
+    $out .= "<label for='search_query'>Suche</label>";
+    $out .= "<input id='search_query' name='q' type='search' value='$value' placeholder='Suchbegriffe(e)'>";
+    $out .= "<input id='search_submit' type='submit' value='Suche'>";
+    $out .= "</div>";
+    $out .= "</form>";
+
+    return $out;
+}
