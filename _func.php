@@ -42,7 +42,30 @@ function renderNav($items, $maxDepth = 0, $fieldNames = '', $class = 'nav') {
 
 		$out .= "</li>";
 	}
+
 	if($out) $out = "<ul class='$class'>$out</ul>";
 
 	return $out;
+}
+
+
+/**
+ * Render a breadcrumb navigation for the current page
+ *
+ * @return string
+ *
+ */
+
+function renderBreadcrumbs() {
+    $out = '';
+
+    foreach($page->parents as $parent) {
+        $out .= "<a href='{$parent->url}'>{$parent->title}</a><span> » </span>";
+    }
+
+    $out .= "{$page->title}";
+
+    $out = "<div class='breadcrumb'>$out</div>";
+
+    return $out;
 }
