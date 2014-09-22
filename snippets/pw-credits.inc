@@ -1,1 +1,0 @@
-<p>Powered by <a href='http://processwire.com'>ProcessWire</a></p>
