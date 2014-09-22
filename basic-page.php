@@ -1,7 +1,5 @@
 <?php
 // Basic page template
-include("./head.inc");
 
-echo $page->body;
-
-include("./foot.inc");
+// Primary content is the page's body copy
+$content = $page->body;
