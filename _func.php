@@ -44,6 +44,22 @@ function renderCanonicalURL($canonical) {
 
 
 /**
+ * Render page edit link.
+ *
+ * @return string
+ *
+ */
+
+function renderEditLink() {
+    $out = '';
+
+    if($page->editable()) $out .= "<a href='$page->editURL' class='edit'>Edit</a>";
+
+    return $out;
+}
+
+
+/**
  * Given a group of pages, render a <ul> navigation
  *
  * @param array|PageArray $items
