@@ -7,19 +7,20 @@
 /**
  * Render a breadcrumb navigation for the current page
  *
- * @param page $current The current $page
  * @return string
  *
  */
 
-function renderBreadcrumbs($current) {
+function renderBreadcrumbs() {
+    $page = wire('page');
+
     $out = '';
 
-    foreach($current->parents as $parent) {
+    foreach($page->parents as $parent) {
         $out .= "<a href='{$parent->url}'>{$parent->title}</a><span> » </span>";
     }
 
-    $out .= "$current->title";
+    $out .= "$page->title";
 
     $out = "<div class='breadcrumb'>$out</div>";
 
