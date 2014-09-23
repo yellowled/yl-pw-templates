@@ -29,6 +29,27 @@ function renderBreadcrumbs() {
 
 
 /**
+ * Render canonical URL link
+ *
+ * @param string $canonical The full canonical URL of the site (set in _init.php)
+ * @return string
+ *
+ */
+
+function renderCanonical($canonical) {
+    $page = wire('page');
+
+    if ($canonical != '') {
+        $out = "    <link rel='canonical' href='$canonical$page->url'>\n";
+    } else {
+        $out = '';
+    }
+
+    return $out;
+}
+
+
+/**
  * Render page edit link
  *
  * @return string

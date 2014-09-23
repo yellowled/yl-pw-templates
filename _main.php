@@ -16,11 +16,7 @@
     <title><?php echo $title; ?></title>
     <meta name="description" content="<?php echo $description; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php
-        if ($canonicalURL != '') {
-            echo "<link rel='canonical' href='$canonicalURL$page->url'>\n";
-        }
-    ?>
+<?php echo renderCanonical($canonicalURL); ?>
     <link rel="dns-prefetch" href="//ajax.googleapis.com">
 <!--[if lte IE 8]>
     <link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/oldie.css">
