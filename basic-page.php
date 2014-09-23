@@ -1,5 +1,8 @@
 <?php
-// Basic page template
+/**
+ * Basic page template
+ *
+ */
 
-// Primary content is the page's body copy
+// Primary content: page's body copy
 $content = $page->body;

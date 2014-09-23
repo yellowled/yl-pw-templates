@@ -1,8 +1,9 @@
 <?php
-// Contact form page template
+/**
+ * Contact form page template
+ *
+ */
 
-// Settings
-// --------------------------------------------------------------------
 // Form recipient
 $emailTo = '';
 // Default subject line
@@ -27,34 +28,33 @@ $sent = false;
 $error = '';
 
 
-// Primary content is the page's body copy
+// Primary content: page's body copy
 $content = $page->body;
 
-
-// Secondary content is a contact form
+// Secondary content: contact form
 if(!$input->post->submit) {
     // If form was not yet submitted
     $content .= $formHint;
 }
 
-// check if the form was submitted
+// Check if form was submitted
 if($input->post->submit) {
-    // check if site is empty
+    // Check if site is empty
     if(!empty($form[site])) $error = $requiredFields;
-    // determine if any fields were ommitted or didn't validate
+    // Determine if any fields were ommitted or didn't validate
     foreach($form as $key => $value) {
         // Exclude all fields which are *not* required
         if($key != 'site') {
             if(empty($value)) $error = $requiredFields;
         }
     }
-    // if no errors, email the form results
+    // No errors, email the form results
     if(!$error) {
         $subject = $emailSubject;
         $message = '';
         $message .= "$form[name] ($form[mail])";
         $message .= ":\n\n$form[mesg]";
-        // foreach($form as $key => $value) $message .= "$key: $value\n";
+
         mail($emailTo, $subject, $message, "From: $form[mail]");
         $sent = true;
     }
@@ -67,7 +67,7 @@ if($sent) {
     foreach($form as $key => $value) {
         $form[$key] = htmlentities($value, ENT_QUOTES, "UTF-8");
     }
-    // Output the form
+    // Emit the form
     $content .= $error;
     $content .= "<form action='./' method='post'>\n";
     $content .= "<div class='form-field'>\n";

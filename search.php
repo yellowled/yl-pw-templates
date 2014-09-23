@@ -1,11 +1,14 @@
 <?php
-// Search page template
+/**
+ * Search page template
+ *
+ */
 
-// Look for a GET variable named 'q' and sanitize it
+// Sanitite GET variable named 'q'
 $q = $sanitizer->text($input->get->q);
 
 if($q) {
-    // Send our sanitized query 'q' variable to the whitelist where it will be
+    // Send sanitized query 'q' to the whitelist where it will be
     // picked up and echoed in the search box by _main.php file.
     $input->whitelist('q', $q);
 
@@ -15,7 +18,7 @@ if($q) {
     // Search title and body for query, limit results to 50 pages.
     $selector = "title|body~=$q, limit=50";
 
-    // If user has access to admin pages, lets exclude them from the search results.
+    // If user has access to admin pages, exclude them from search results.
     if($user->isLoggedin()) $selector .= ", has_parent!=2";
 
     // Find pages that match the selector
@@ -34,6 +37,7 @@ if($q) {
     $content = "<p>Geben Sie bitte einen oder mehrere Suchbegriffe in das Suchformular ein.</p>";
 }
 
+// Emit search form
 $action = $pages->get('template=search')->url;
 
 $content .= "<form id='search_form' action='$action' method='get'>\n";
