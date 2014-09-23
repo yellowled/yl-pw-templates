@@ -31,15 +31,16 @@ function renderBreadcrumbs() {
 /**
  * Render page edit link
  *
- * @param page $current The current $page
  * @return string
  *
  */
 
-function renderEditLink($current) {
+function renderEditLink() {
+    $page = wire('page');
+
     $out = '';
 
-    if($current->editable()) $out .= "<a href='$current->editURL' class='edit'>Edit</a>";
+    if($page->editable()) $out .= "<a class='edit' href='$page->editURL'>Edit</a>";
 
     return $out;
 }
