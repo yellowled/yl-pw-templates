@@ -17,6 +17,7 @@
     <meta name="description" content="<?php echo $description; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php echo renderCanonical($canonicalURL); ?>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="dns-prefetch" href="//ajax.googleapis.com">
 <!--[if lte IE 8]>
     <link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/oldie.css">
@@ -35,7 +36,6 @@
         </article>
     </main>
 
-<!--[if lt IE 8]> <p id="old-ie" class="chromeframe">Ihr Browser ist veraltet! <a href="http://browsehappy.com/">Verwenden Sie einen anderen Browser</a> oder <a href="http://www.google.com/chromeframe/?redirect=true">installieren Sie Google Chrome Frame</a>, damit diese Website korrekt angezeigt wird.</p> <![endif]-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="<?php echo $config->urls->templates?>scripts/jquery/dist/jquery.min.js"><\/script>')</script>
     <script src="<?php echo $config->urls->templates?>scripts/master.js"></script>
