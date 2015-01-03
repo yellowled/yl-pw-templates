@@ -4,6 +4,11 @@
  *
  */
 
+// Search form texts
+$matches_found  = 'Treffer für Ihre Suchanfrage';
+$matches_none   = '<p>Keine Treffer für Ihre Suchanfrage.</p>';
+$no_terms       = '<p>Geben Sie bitte einen oder mehrere Suchbegriffe in das Suchformular ein.</p>';
+
 // Sanitite GET variable named 'q'
 $q = $sanitizer->text($input->get->q);
 
@@ -25,16 +30,16 @@ if($q) {
     $matches = $pages->find($selector);
 
     if($matches->count) {
-        $content = "<h3>$matches->count Treffer für Ihre Suchanfrage</h3>";
+        $content = "<h3>$matches->count $matches_found</h3>";
 
         $content .= renderNav($matches, 0, 'summary');
     } else {
-        $content = "<p>Keine Treffer für Ihre Suchanfrage.</p>";
+        $content = $matches_none;
     }
 
 } else {
     // No search terms provided
-    $content = "<p>Geben Sie bitte einen oder mehrere Suchbegriffe in das Suchformular ein.</p>";
+    $content = $no_terms;
 }
 
 // Emit search form
