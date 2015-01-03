@@ -9,6 +9,9 @@ $thumb_per_page = 9;
 // Thumbnail dimensions
 $thumb_width    = 200;
 $thumb_height   = 150;
+// Pager labels
+$pager_next     = 'Weiter &raquo;';
+$pager_prev     = '&laquo; Zurück';
 
 $gallery_start = ($input->pageNum - 1) * $thumb_per_page;
 $gallery_total = count($page->images);
@@ -34,8 +37,8 @@ $content .= "</ul>\n";
 
 // Emit pager
 $content .= $a->renderPager(array(
-    'nextItemLabel' => 'Weiter &raquo;',
-    'previousItemLabel' => '&laquo; Zurück',
+    'nextItemLabel' => $pager_next,
+    'previousItemLabel' => $pager_prev,
     'listMarkup' => "<ul class='pager'>{out}</ul>",
     'itemMarkup' => "<li>{out}</li>",
     'linkMarkup' => "<a href='{url}'>{out}</a>"
