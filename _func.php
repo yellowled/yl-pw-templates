@@ -22,7 +22,7 @@ function renderBreadcrumbs() {
 
     $out .= "$page->title";
 
-    $out = "<div class='breadcrumb'>$out</div>";
+    $out = "<nav class='breadcrumb'>$out</nav>";
 
     return $out;
 }
