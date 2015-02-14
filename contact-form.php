@@ -50,12 +50,16 @@ if($input->post->submit) {
     }
     // No errors, email the form results
     if(!$error) {
-        $subject = $emailSubject;
-        $message = '';
+        $headers  = "From: $form[email]\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+        $headers .= "Content-Transfer-Encoding: quoted-printable\r\n";
+        $subject  = $emailSubject;
+        $message  = '';
         $message .= "$form[name] ($form[mail])";
         $message .= ":\n\n$form[mesg]";
 
-        mail($emailTo, $subject, $message, "From: $form[mail]");
+        mail($emailTo, $subject, $message, $headers);
         $sent = true;
     }
 }
