@@ -50,7 +50,7 @@ if($input->post->submit) {
     }
     // No errors, email the form results
     if(!$error) {
-        $headers  = "From: $form[email]\r\n";
+        $headers  = "From: $form[mail]\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
         $headers .= "Content-Transfer-Encoding: quoted-printable\r\n";
