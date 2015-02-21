@@ -97,11 +97,10 @@ function renderGoogleMap($latitude, $longitude, $zoom, $address, $id = 'map') {
  * @param array|PageArray $items
  * @param int $depth How many levels of navigation below current should it go?
  * @param string $fieldNames Any extra field names to display (separate multiple fields with a space)
- * @param string $class CSS class name for containing <ul>
  * @return string
  *
  */
-function renderNav($items, $maxDepth = 0, $fieldNames = '', $class = 'nav') {
+function renderNav($items, $maxDepth = 0, $fieldNames = '') {
 	// if we were given a single Page rather than a group of them, we'll pretend they
 	// gave us a group of them (a group/array of 1)
 	if($items instanceof Page) $items = array($items);
@@ -123,14 +122,13 @@ function renderNav($items, $maxDepth = 0, $fieldNames = '', $class = 'nav') {
 		// if the item has children and we're allowed to output tree navigation (maxDepth)
 		// then call this same function again for the item's children
 		if($item->hasChildren() && $maxDepth) {
-			if($class == 'nav') $class = 'nav nav-tree';
-			$out .= renderNav($item->children, $maxDepth-1, $fieldNames, $class);
+			$out .= renderNav($item->children, $maxDepth-1, $fieldNames);
 		}
 
 		$out .= "</li>";
 	}
 
-	if($out) $out = "<ul class='$class'>$out</ul>";
+	if($out) $out = "<ul>$out</ul>";
 
 	return $out;
 }
