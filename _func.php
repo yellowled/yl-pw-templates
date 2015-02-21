@@ -12,14 +12,10 @@
  *
  */
 
-function renderBreadcrumbs($seperator) {
+function renderBreadcrumbs($seperator = '»') {
     $page = wire('page');
 
     $out = '';
-
-    if ($seperator == '') {
-        $seperator = "»";
-    }
 
     foreach($page->parents as $parent) {
         $out .= "<a href='{$parent->url}'>{$parent->title}</a><span> " . $seperator ." </span>";
