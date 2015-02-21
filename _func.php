@@ -7,17 +7,22 @@
 /**
  * Render a breadcrumb navigation for the current page
  *
+ * @param string $seperator A character used to seperate breadcrumb links
  * @return string
  *
  */
 
-function renderBreadcrumbs() {
+function renderBreadcrumbs($seperator) {
     $page = wire('page');
 
     $out = '';
 
+    if ($seperator == '') {
+        $seperator = "»";
+    }
+
     foreach($page->parents as $parent) {
-        $out .= "<a href='{$parent->url}'>{$parent->title}</a><span> » </span>";
+        $out .= "<a href='{$parent->url}'>{$parent->title}</a><span> " . $seperator ." </span>";
     }
 
     $out .= "$page->title";
