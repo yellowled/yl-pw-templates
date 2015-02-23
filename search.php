@@ -45,10 +45,8 @@ if($q) {
 // Emit search form
 $action = $pages->get('template=search')->url;
 
-$content .= "<form id='search_form' action='$action' method='get'>\n";
-$content .= "<div>\n";
-$content .= "<label for='search_query'>Suche</label>\n";
-$content .= "<input id='search_query' name='q' type='search' value='$q' placeholder='Suchbegriffe(e)'>\n";
-$content .= "<input id='search_submit' type='submit' value='Suche'>\n";
-$content .= "</div>\n";
+$content .= "<form id='search-form' action='$action' method='get'>\n";
+$content .= "<label for='search-query'>Suche</label>\n";
+$content .= "<input id='search-query' name='q' type='search' value='$q' placeholder='Suchbegriffe(e)'>\n";
+$content .= "<input type='submit' value='Suche'>\n";
 $content .= "</form>\n";
