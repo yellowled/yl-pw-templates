@@ -10,8 +10,8 @@ $thumb_per_page = 9;
 $thumb_width    = 200;
 $thumb_height   = 150;
 // Pager labels
-$pager_next     = 'Weiter &raquo;';
-$pager_prev     = '&laquo; Zurück';
+$pager_next     = 'Weiter »';
+$pager_prev     = '« Zurück';
 
 $gallery_start = ($input->pageNum - 1) * $thumb_per_page;
 $gallery_total = count($page->images);
@@ -31,7 +31,7 @@ $content = $page->body;
 $content .= "\n<ul class='gallery'>\n";
 foreach ($gallery_images as $item) {
     $thumb = $item->size($thumb_width,$thumb_height);
-    $content .= "<li><a href='{$item->url}'><img src='{$thumb->url}' alt='{$item->description}'></a></li>\n";
+    $content .= "<li><a href='{$item->url}' title='{$item->description}'><img src='{$thumb->url}' alt='{$item->description}'></a></li>\n";
 }
 $content .= "</ul>\n";
 
