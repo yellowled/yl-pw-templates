@@ -62,7 +62,7 @@ function renderEditLink() {
 
     $out = '';
 
-    if($page->editable()) $out .= "<a class='edit' href='$page->editURL'>Edit</a>";
+    if($page->editable()) $out .= "<a id='edit' href='$page->editURL'>Edit</a>";
 
     return $out;
 }
