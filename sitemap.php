@@ -5,4 +5,6 @@
  */
 
 // Primary content: list of pages
-$content = renderNav($homepage, 4);
+$content  = "<div class='sitemap'>";
+$content .= renderNav($homepage, 4);
+$content .= "</div>";
