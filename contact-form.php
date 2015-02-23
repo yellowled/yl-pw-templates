@@ -7,7 +7,7 @@
 // Form recipient
 $emailTo = '';
 // Default subject line
-$emailSubject = 'Kontaktformular';
+$emailSubject = "[{$config->httpHost}] Kontaktformular";
 // Emitted before the form
 $formHint = "<p>Mit einem Stern (*) markierte Felder sind Pflichtfelder und <strong>müssen</strong> ausgefüllt werden.</p>\n";
 // Emitted after form has been sent
