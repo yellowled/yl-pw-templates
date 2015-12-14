@@ -16,7 +16,7 @@
     <meta name="description" content="<?php echo $description; ?>">
 <?php echo renderCanonical($canonicalURL); ?>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="dns-prefetch" href="//ajax.googleapis.com">
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com">
     <link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/master.css">
     <script src="<?php echo $config->urls->templates?>scripts/modernizr/modernizr.js"></script>
 </head>
@@ -29,7 +29,7 @@
         </article>
     </main>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="<?php echo $config->urls->templates?>scripts/jquery/dist/jquery.min.js"><\/script>')</script>
     <script src="<?php echo $config->urls->templates?>scripts/master.js"></script>
 </body>
