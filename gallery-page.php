@@ -1,7 +1,6 @@
 <?php
 /**
  * Gallery page template
- *
  */
 
 // Thumbnails per page

@@ -1,7 +1,6 @@
 <?php
 /**
  * Home page template
- *
  */
 
 // Primary content: page's body copy

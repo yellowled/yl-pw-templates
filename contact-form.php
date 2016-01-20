@@ -1,7 +1,6 @@
 <?php
 /**
  * Contact form page template
- *
  */
 
 // Form recipient

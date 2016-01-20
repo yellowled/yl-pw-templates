@@ -1,7 +1,6 @@
 <?php
 /**
  * Search page template
- *
  */
 
 // Search form texts
