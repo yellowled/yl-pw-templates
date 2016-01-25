@@ -5,8 +5,8 @@
 
 // Search form texts
 $matches_found  = 'Treffer für Ihre Suchanfrage';
-$matches_none   = '<p>Keine Treffer für Ihre Suchanfrage.</p>';
-$no_terms       = '<p>Geben Sie bitte einen oder mehrere Suchbegriffe in das Suchformular ein.</p>';
+$matches_none   = '<p class="msg-notice">Keine Treffer für Ihre Suchanfrage.</p>';
+$no_terms       = '<p class="msg-warning">Geben Sie bitte einen oder mehrere Suchbegriffe in das Suchformular ein.</p>';
 
 // Sanitite GET variable named 'q'
 $q = $sanitizer->text($input->get->q);
