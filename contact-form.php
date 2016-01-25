@@ -8,11 +8,11 @@ $emailTo = '';
 // Default subject line
 $emailSubject = "[{$config->httpHost}] Kontaktformular";
 // Emitted before the form
-$formHint = "<p>Mit einem Stern (*) markierte Felder sind Pflichtfelder und <strong>müssen</strong> ausgefüllt werden.</p>\n";
+$formHint = "<p class='msg-notice'>Mit einem Stern (*) markierte Felder sind Pflichtfelder und <strong>müssen</strong> ausgefüllt werden.</p>\n";
 // Emitted after form has been sent
-$formConfirm = "<p>Ihre Nachricht wurde erfolgreich versandt.</p>\n";
+$formConfirm = "<p class='msg-success'>Ihre Nachricht wurde erfolgreich versandt.</p>\n";
 // Emitted if not all required fields have been filled out
-$requiredFields = "<p>Sie haben nicht alle Pflichtfelder korrekt ausgefüllt.</p>\n";
+$requiredFields = "<p class='msg-warning'>Sie haben nicht alle Pflichtfelder korrekt ausgefüllt.</p>\n";
 
 // Set and sanitize our form field values
 $form = array(
