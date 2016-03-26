@@ -38,6 +38,9 @@ $content .= "</ul>\n";
 $content .= $a->renderPager(array(
     'nextItemLabel' => $pager_next,
     'previousItemLabel' => $pager_prev,
+    'nextItemClass' => "gallery-next",
+    'previousItemClass' => "gallery-prev",
+    'currentItemClass' => "gallery-current",
     'listMarkup' => "<ul class='gallery-pager'>{out}</ul>",
     'itemMarkup' => "<li>{out}</li>",
     'linkMarkup' => "<a href='{url}'>{out}</a>"
