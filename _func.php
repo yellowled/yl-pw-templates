@@ -84,7 +84,7 @@ function renderGoogleMap($latitude, $longitude, $zoom, $address, $id = 'map') {
     $out = '';
 
     $out .= "<div id='$id' class='map' data-lat='$latitude' data-lng='$longitude' data-zoom='$zoom'>\n";
-    $out .= "<span><a href='https://maps.google.de/maps?q=$address'>$address</a></span>\n";
+    $out .= "<span class='map-fallback'><a href='https://maps.google.de/maps?q=$address'>$address</a></span>\n";
     $out .= "</div>\n";
 
     return $out;
