@@ -1,6 +1,8 @@
 <?php
 /**
- * Creates an RSS feed using the MarkupRSS module
+ * Create an RSS feed
+ *
+ * Requires: MarkupRSS
  */
 
 // Template used for posts
