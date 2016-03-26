@@ -5,7 +5,7 @@
 
 // Search form texts
 $matches_found  = 'Treffer für Ihre Suchanfrage';
-$matches_none   = "<p class='msg-notice'>Keine Treffer für Ihre Suchanfrage.</p>\n";
+$matches_none   = "<p class='msg-warning'>Keine Treffer für Ihre Suchanfrage.</p>\n";
 $no_terms       = "<p class='msg-warning'>Geben Sie bitte einen oder mehrere Suchbegriffe in das Suchformular ein.</p>\n";
 
 // Sanitite GET variable named 'q'
