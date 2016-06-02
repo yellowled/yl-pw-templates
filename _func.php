@@ -69,29 +69,6 @@ function renderEditLink() {
 
 
 /**
- * Render markup for a GoogleMap with gmaps.js and the GoogleMaps marker module
- *
- * @param string $latitude  Latitude value
- * @param string $longitude Longitude value
- * @param string $zoom      Zoom value
- * @param string $address   Street address value
- * @param string $id        HTML id for the map container
- * @return string
- *
- */
-
-function renderGoogleMap($latitude, $longitude, $zoom, $address, $id = 'map') {
-    $out = '';
-
-    $out .= "<div id='$id' class='map' data-lat='$latitude' data-lng='$longitude' data-zoom='$zoom'>\n";
-    $out .= "<span class='map-fallback'><a href='https://maps.google.de/maps?q=$address'>$address</a></span>\n";
-    $out .= "</div>\n";
-
-    return $out;
-}
-
-
-/**
  * Given a group of pages, render a <ul> navigation
  *
  * @param array|PageArray $items
