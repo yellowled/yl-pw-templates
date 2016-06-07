@@ -21,7 +21,7 @@
     <script src="<?php echo $config->urls->templates?>scripts/modernizr/modernizr.js"></script>
 </head>
 <body>
-    <main role="main">
+    <main>
         <article>
             <h1><?php echo $headline; ?></h1>
 
