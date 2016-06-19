@@ -42,6 +42,6 @@ $content .= $a->renderPager(array(
     'previousItemClass' => "gallery-prev",
     'currentItemClass' => "gallery-current",
     'listMarkup' => "<ul class='gallery-pager'>{out}</ul>",
-    'itemMarkup' => "<li>{out}</li>",
+    'itemMarkup' => "<li class='{class}'>{out}</li>",
     'linkMarkup' => "<a href='{url}'>{out}</a>"
 ));
