@@ -7,7 +7,7 @@
 $matches_found  = _x('Treffer für Ihre Suchanfrage', 'search');
 $matches_none   = _x('Keine Treffer für Ihre Suchanfrage', 'search');
 $no_terms       = _x('Geben Sie bitte einen oder mehrere Suchbegriffe in das Suchformular ein.', 'search');
-$search_label   = _x('Suchbegriffe(e)', 'search');
+$search_label   = _x('Suchbegriff(e)', 'search');
 $search_button  = _x('Suchen', 'search');
 
 // Sanitite GET variable named 'q'
