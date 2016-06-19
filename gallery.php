@@ -9,8 +9,8 @@ $thumb_per_page = 9;
 $thumb_width    = 200;
 $thumb_height   = 150;
 // Pager labels
-$pager_next     = 'Weiter';
-$pager_prev     = 'Zurück';
+$pager_next     = _x('Weiter', 'gallery');
+$pager_prev     = _x('Zurück', 'gallery');
 
 $gallery_start = ($input->pageNum - 1) * $thumb_per_page;
 $gallery_total = count($page->images);
