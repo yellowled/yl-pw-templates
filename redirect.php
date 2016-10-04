@@ -1,4 +1,4 @@
-<?php
+<?php namespace ProcessWire;
 /**
  *  Internal or external redirects in primary nav
  */

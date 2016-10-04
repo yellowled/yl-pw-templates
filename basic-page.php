@@ -1,4 +1,4 @@
-<?php
+<?php namespace ProcessWire;
 /**
  * Basic page template
  */

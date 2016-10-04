@@ -1,4 +1,4 @@
-<?php
+<?php namespace ProcessWire;
 /**
  * Contact form page template
  */

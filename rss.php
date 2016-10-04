@@ -1,4 +1,4 @@
-<?php
+<?php namespace ProcessWire;
 /**
  * Create an RSS feed
  *
