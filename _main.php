@@ -8,17 +8,16 @@
  *
  */
 ?><!DOCTYPE html>
-<html class="no-js" lang="de">
+<html lang="de">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $title; ?></title>
     <meta name="description" content="<?php echo $description; ?>">
 <?php echo renderCanonical($canonicalURL); ?>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="dns-prefetch" href="https://code.jquery.com">
-    <link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/master.css">
-    <script src="<?php echo $config->urls->templates?>scripts/modernizr/modernizr.js"></script>
+    <link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/main.css">
 </head>
 <body>
     <main role="main">
@@ -29,8 +28,6 @@
         </article>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="<?php echo $config->urls->templates?>scripts/jquery/dist/jquery.min.js"><\/script>')</script>
-    <script src="<?php echo $config->urls->templates?>scripts/master.js"></script>
+    <script src="<?php echo $config->urls->templates?>scripts/main.js"></script>
 </body>
 </html>
